@@ -1,0 +1,427 @@
+condition
+    Name Match condition (binary)
+    0 = Name mismatch
+    1 = Name match
+  
+openedcount
+    Did the email recipient open the email? (binary)
+    0 = did not open
+    1 = did open
+  
+clickedcount
+    Did the email recipient click on the link in the email? (binary)
+    0 = did not click
+    1 = clicked
+  
+diddonate
+    Did the email recipient make a donation? (binary)
+    0 = did not donate
+    1 = donated
+ 
+donatedamount
+    How much did the email recipient donate? (scale)
+
+ln_paymentplusone
+    Natural log transformation of donatedamount with a constant of 1 added (scale)
+
+teacher_ethnic
+    Ethnicity of teacher based on first and last name (Namsor)
+    A = Asian
+    B_NL = Black, not Latino
+    HL = Hispanic, Latino
+    W_NL = White, not Latino
+    
+donor_ethnic
+    Ethnicity of donor based on first and last name (Namsor)
+    A = Asian
+    B_NL = Black, not Latino
+    HL = Hispanic, Latino
+    W_NL = White, not Latino
+    
+donorFirstLetter
+    Initial letter of donor's surname (A-Z)
+
+teacherFirstLetter
+    Initial letter of teachers's surname (A-Z)
+    
+isFirstLetterMatch
+    donorFirstLetter = teacherFirstLetter? (binary)
+    0 = no
+    1 = yes
+    
+numdonorswithname
+    Number of donors in data set with this donor's surmame (scale)
+    
+school_city
+    City of teacher's school (text)
+    
+school_state
+    State of teacher's school (two-letter state abbreviation)
+    
+rank.donor
+    Popularity rank of donor's surname in population based on 2000 Census (ordinal)
+    1 = most common name in 2000 Census
+    
+count.donor
+    2000 Census estimate of the number of people in US with this donor's surname
+    
+prop100k.donor
+    Proportion of people with this donor's surname per 100,000 people, 2000 US Census
+    
+cum_prop100k.donor
+    Estimate of the number of people with other names one would encounter in a group of 100,000 before meeting someone with this donor's surname if ordered by name-popularity, 2000 US Census
+    
+pctwhite.donor
+    Percent of people in 2000 US census with this surname who were white
+    
+pctblack.donor
+    Percent of people in 2000 US census with this donor's surname who were black
+    
+pctapi.donor
+    Percent of people in 2000 US census with this donor's surname who were Asian / Pacific Islander
+    
+pctaian.donor
+    Percent of people in 2000 US census with this donor's surname who were American Indian / Alaskan Native
+
+pct2prace.donor
+    Percent of people in 2000 US census with this donor's surname who were two races
+    
+pcthispanic.donor
+    Percent of people in 2000 US census with this donor's surname who were Hispanic
+    
+rank.teacher
+    Popularity rank of teachers's surname in population based on 2000 Census (ordinal)
+    1 = most common name in 2000 Census
+    
+count.teacher
+    2000 Census estimate of the number of people in US with this teacher's surname
+
+prop100k.teacher
+    Proportion of perople with this teachers's surname per 100,000 people, 2000 US Census
+
+cum_prop100k.teacher
+    Estimate of the number of people with other names one would encounter in a group of 100,000 before meeting someone with this teachers's surname if ordered by name-popularity, 2000 US Census
+    
+pctwhite.teacher
+    Percent of people in 2000 US census with this teacher's surname who were white
+    
+pctblack.teacher
+    Percent of people in 2000 US census with this teacher's surname who were black
+
+pctapi.teacher
+    Percent of people in 2000 US census with this teacher's surname who were Asian / Pacific Islander
+    
+pctaian.teacher
+    Percent of people in 2000 US census with this teacher's surname who were American Indian / Alaskan Native
+
+pct2prace.teacher
+    Percent of people in 2000 US census with this teacher's surname who were two races
+
+pcthispanic.teacher
+    Percent of people in 2000 US census with this teacher's surname who were Hispanic
+
+Max.donor
+    The greatest value among pctwhite.donor, pctblack.donor, pctapi.donor, pctaian.donor, pct2prace.donor, pcthispanic.donor
+
+Race.donor
+    Donor's highest percent likelihood of being a particular race based on 2000 US Census
+    
+Race.donor.Numeric
+    Race.donor recoded as a number
+    1 = white
+    2 = Hispanic
+    3 = black
+    4 = Asian / Pacific Islander
+    5 = American Indian / Aslaskan Native
+    6 = two races
+    
+Max.teacher
+    The greatest value among pctwhite.teacher, pctblack.teacher, pctapi.teacher, pctaian.teacher, pct2prace.teacher, pcthispanic.teacher
+
+Race.teacher
+    Teacher's highest percent likelihood of being a particular race based on 2000 US Census
+
+Race.teacher.Numeric
+    Race.teacher recoded as a number
+    1 = white
+    2 = Hispanic
+    3 = black
+    4 = Asian / Pacific Islander
+    5 = American Indian / Aslaskan Native
+    6 = two races
+
+minPct
+    Lower value between Max.donor and Max.teacher
+    
+isRaceMatch.census
+    Does race match based on most likely Census race? (binary)
+    0 = no
+    1 = yes
+
+LikelyGender_teacher_namsor
+    Teacher's most likely gender based on machine learning Namsor coding
+    
+GenderScale_teacher_namsor
+    Level of confidence in LikelyGender_teacher_namsor classification (Namsor)
+    -1 = 100% male
+    1 = 100% female
+    
+CountryofOrigin_teacher_namsor
+    Machine learning (Namsor) classification of teacher's full name country of origin (e.g. Germany)
+    
+CountryofOriginISO2_teacher_namsor
+    Two-letter code representing machine learning (Namsor) classification of teacher's full name country of origin (e.g. DE)
+
+CountryofOriginBestAlternative_teacher_namsor
+    Two-letter code representing machine learning (Namsor) second most likely classification of teacher's full name country of origin (e.g. DE)
+
+CountryofOriginFirstName_teacher_namsor
+    Two-letter code representing machine learning (Namsor) classification of teacher's first name country of origin (e.g. DE)
+    
+CountryofOriginLastName_teacher_namsor
+    Two-letter code representing machine learning (Namsor) classification of teacher's surname country of origin (e.g. DE)
+    
+SubRegionofOrigin_teacher_namsor
+    Sub-region of origin of teacher's name based on machine learning (Namsor) classifiction
+    
+RegionofOrigin_teacher_namsor
+    Region of origin of teacher's name based on machine learning (Namsor) classifiction
+
+TopRegionofOrigin_teacher_namsor
+    Top region (continent) of origin of teacher's name based on machine learning (Namsor) classifiction
+    
+CountryofOriginScore_teacher_namsor
+    Level of confidence in teacher full name country of origin classifications (Namsor)
+
+CountryofOriginFirstNameScore_teacher_namsor
+    Level of confidence in teacher first name country of origin classifications (Namsor)
+
+CountryofOriginLastNameScore_teacher_namsor
+    Level of confidence in teacher surname country of origin classifications (Namsor)
+
+CountryofOriginScript_teacher_namsor
+    Type of alphabet used in teacher's name country (Namsor)
+
+DiasporaEthnicity_teacher_namsor
+    Ethnic origins of teacher's full name (Namsor)
+    
+DiasporaGeoCountryISO2_teacher_namsor
+    Two-letter code representing teacher's diaspora based on machine learning (Namsor) classifiction
+
+DiasporaEthnicityBestAlternative_teacher_namsor
+    Machine learning (Namsor) second most likely classification of teacher's diaspora
+    
+DiasporaGeoCountryISO2BestAlternative_teacher_namsor
+    Two-letter code achine learning (Namsor) second most likely classification of teacher's diaspora
+    
+DiasporaScore_teacher_namsor
+    Level of confidence in teacher's diaspora
+    
+raceEthno_teacher_namsor
+    Ethnicity of teacher based on first and last name (Namsor)
+    A = Asian
+    B_NL = Black, not Latino
+    HL = Hispanic, Latino
+    W_NL = White, not Latino
+
+LikelyGender_namsor
+    Donor's most likely gender based on machine learning Namsor coding
+    
+GenderScale_namsor
+    Level of confidence in LikelyGender_namsor classification (Namsor)
+    -1 = 100% male
+    1 = 100% female
+    
+CountryofOrigin_namsor
+    Machine learning (Namsor) classification of donor's full name country of origin (e.g. Germany)
+    
+CountryofOriginISO2_namsor
+    Two-letter code representing machine learning (Namsor) classification of donor's full name country of origin (e.g. DE)
+
+CountryofOriginBestAlternative_namsor
+    Two-letter code representing machine learning (Namsor) second most likely classification of donor's full name country of origin (e.g. DE)
+
+CountryofOriginFirstName_namsor
+    Two-letter code representing machine learning (Namsor) classification of donor's first name country of origin (e.g. DE)
+    
+CountryofOriginLastName_namsor
+    Two-letter code representing machine learning (Namsor) classification of donor's surname country of origin (e.g. DE)
+    
+SubRegionofOrigin_namsor
+    Sub-region of origin of donor's name based on machine learning (Namsor) classifiction
+    
+RegionofOrigin_namsor
+    Region of origin of donor's name based on machine learning (Namsor) classifiction
+
+TopRegionofOrigin_namsor
+    Top region (continent) of origin of donor's name based on machine learning (Namsor) classifiction
+    
+CountryofOriginScore_namsor
+    Level of confidence in teacher full name country of origin classifications (Namsor)
+
+CountryofOriginFirstNameScore_namsor
+    Level of confidence in teacher first name country of origin classifications (Namsor)
+
+CountryofOriginLastNameScore_namsor
+    Level of confidence in teacher surname country of origin classifications (Namsor)
+
+CountryofOriginScript_namsor
+    Type of alphabet used in donor's name country (Namsor)
+
+DiasporaEthnicity_namsor
+    Ethnic origins of donor's full name (Namsor)
+    
+DiasporaGeoCountryISO2_namsor
+    Two-letter code representing donor's diaspora based on machine learning (Namsor) classifiction
+
+DiasporaEthnicityBestAlternative_namsor
+    Machine learning (Namsor) second most likely classification of donor's diaspora
+    
+DiasporaGeoCountryISO2BestAlternative_namsor
+    Two-letter code machine learning (Namsor) second most likely classification of donor's diaspora
+    
+DiasporaScore_namsor
+    Level of confidence in donor's diaspora
+    
+raceEthno_namsor
+    Ethnicity of donor based on first and last name (Namsor)
+    A = Asian
+    B_NL = Black, not Latino
+    HL = Hispanic, Latino
+    W_NL = White, not Latino
+    
+raceMatch
+    Based on machine learning approach (Namsor), does race of donor and teacher match? (binary)
+    0 = no
+    1 = yes
+
+genderMatch
+    Based on machine learning approach (Namsor), does gender of donor and teacher match? (binary)
+    0 = no
+    1 = yes
+
+isFemale
+    Based on machine learning approach (Namsor), is donor female? (binary)
+    0 = no
+    1 = yes  
+
+subRegionMatch
+    Based on machine learning approach (Namsor), does the subregion of the donor and teacher match? (binary)
+    0 = no
+    1 = yes  
+
+countryMatch
+    Based on machine learning approach (Namsor), does the country of origin of the name of the donor and teacher match? (binary)
+    0 = no
+    1 = yes
+
+dummyBlack
+    Dummy variable, black donor? (white donor 0 on all dummies)
+    0 = no
+    1 = yes
+    
+dummyHispanic
+    Dummy variable, Hispanic donor? (white donor 0 on all dummies)
+    0 = no
+    1 = yes
+
+dummyAsian
+    Dummy variable, Asian donor? (white donor 0 on all dummies)
+    0 = no
+    1 = yes
+    
+dummyBlack_teacher
+    Dummy variable, black teacher? (white teacher 0 on all dummies)
+    0 = no
+    1 = yes
+    
+dummyHispanic_teacher
+    Dummy variable, Hispanic teacher? (white teacher 0 on all dummies)
+    0 = no
+    1 = yes
+    
+dummyAsian_teacher
+    Dummy variable, Asian teacher? (white teacher 0 on all dummies)
+    0 = no
+    1 = yes
+    
+isFemale_teacher
+    Based on machine learning approach (Namsor), is teacher female? (binary)
+    0 = no
+    1 = yes
+
+isFemaleRecode
+    Recoded value of isFemale
+    -1 = male
+    1 = female
+
+isFemale_teacherRecode
+    Recoded value of isFemale_teacher
+    -1 = male
+    1 = female
+    
+teacher_gender_fromPrefix
+    Teacher's gender inferred from prefix (e.g. Mr. Mrs. Ms.)
+    Male = Mr.
+    Female = Mrs. or Ms. or Miss
+    Unknown = no prexfix
+    
+teacher_gender_sameBothMethods
+    Teacher's gender the same using Namor and as inferred from prefix?
+    0 = no
+    1 = yes
+
+teacher_gender_sameBothMethods_ExcludeUnknown    
+    Teacher's gender the same using Namor and as inferred from prefix (excluding "unknown" classification from either method)?
+    0 = no
+    1 = yes
+    
+census_raceMatch
+    Based on census approach, does race of donor and teacher match? (binary)
+    0 = no
+    1 = yes
+    
+census_black_teacher
+    Based on census approach, is teacher black?
+    0 = no
+    1 = yes
+    
+census_hispanic_teacher	
+    Based on census approach, is teacher Hispanic?
+    0 = no
+    1 = yes
+    
+census_asian_teacher	
+    Based on census approach, is teacher Asian?
+    0 = no
+    1 = yes
+    
+census_black_donor
+    Based on census approach, is donor black?
+    0 = no
+    1 = yes
+    
+census_hispanic_donor
+    Based on census approach, is donor Hispanic?
+    0 = no
+    1 = yes
+    
+census_asian_donor
+    Based on census approach, is donor Asian?
+    0 = no
+    1 = yes
+    
+ethAndName
+    Do donor and teacher match on both ethnicity and name?
+    0 = no
+    1 = yes
+
+ethAndGen
+    Do donor and teacher match on both ethnicity and gender?
+    0 = no
+    1 = yes
+    
+ethAndNameAndGen
+    Do donor and teacher match on all three of ethnicity, name, and gender?
+    0 = no
+    1 = yes

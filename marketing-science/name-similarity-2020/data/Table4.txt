@@ -1,0 +1,249 @@
+> modelOne <- glm(formula = diddonate ~ condition + raceMatch + genderMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelOne)
+
+Call:
+glm(formula = diddonate ~ condition + raceMatch + genderMatch + 
+    countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, family = binomial(link = "logit"), data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1996  -0.0647  -0.0411  -0.0265   4.0236  
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -6.93874    0.75269  -9.219   <2e-16 ***
+condition               0.92005    0.37713   2.440   0.0147 *  
+raceMatch               0.93698    0.58939   1.590   0.1119    
+genderMatch            -0.09203    0.50488  -0.182   0.8554    
+countryMatch           -0.13936    0.33072  -0.421   0.6735    
+isFemale_teacher        0.06920    0.49016   0.141   0.8877    
+dummyBlack_teacher     -1.05418    0.66243  -1.591   0.1115    
+dummyHispanic_teacher   0.71136    0.81305   0.875   0.3816    
+dummyAsian_teacher    -14.56252  555.75233  -0.026   0.9791    
+isFemale               -0.92491    0.50289  -1.839   0.0659 .  
+dummyBlack             -0.06850    0.61730  -0.111   0.9116    
+dummyHispanic          -2.16119    1.25055  -1.728   0.0840 .  
+dummyAsian              1.33193    0.88031   1.513   0.1303    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 606.11  on 28736  degrees of freedom
+Residual deviance: 568.92  on 28724  degrees of freedom
+  (1560 observations deleted due to missingness)
+AIC: 594.92
+
+Number of Fisher Scoring iterations: 19
+
+###########################################
+
+> modelTwo <- glm(formula = diddonate ~  raceMatch + genderMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelTwo)
+
+Call:
+glm(formula = diddonate ~ raceMatch + genderMatch + countryMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, family = binomial(link = "logit"), data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1533  -0.0582  -0.0554  -0.0316   3.9182  
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -6.59343    0.72790  -9.058   <2e-16 ***
+raceMatch               1.12286    0.58315   1.926   0.0542 .  
+genderMatch            -0.08215    0.50388  -0.163   0.8705    
+countryMatch            0.08402    0.32236   0.261   0.7944    
+isFemale_teacher        0.04383    0.48969   0.090   0.9287    
+dummyBlack_teacher     -1.02493    0.66482  -1.542   0.1232    
+dummyHispanic_teacher   0.55529    0.78695   0.706   0.4804    
+dummyAsian_teacher    -14.52307  561.23655  -0.026   0.9794    
+isFemale               -0.95375    0.50189  -1.900   0.0574 .  
+dummyBlack             -0.01430    0.61793  -0.023   0.9815    
+dummyHispanic          -1.85220    1.20357  -1.539   0.1238    
+dummyAsian              1.47226    0.88127   1.671   0.0948 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 606.11  on 28736  degrees of freedom
+Residual deviance: 575.48  on 28725  degrees of freedom
+  (1560 observations deleted due to missingness)
+AIC: 599.48
+
+Number of Fisher Scoring iterations: 19
+
+###########################################
+
+> modelThree <- glm(formula = diddonate ~ condition + genderMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelThree)
+
+Call:
+glm(formula = diddonate ~ condition + genderMatch + countryMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, family = binomial(link = "logit"), data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1623  -0.0637  -0.0413  -0.0285   4.0170  
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -6.19489    0.56914 -10.885  < 2e-16 ***
+condition               1.00133    0.37454   2.674  0.00751 ** 
+genderMatch            -0.05328    0.51016  -0.104  0.91682    
+countryMatch           -0.13100    0.33098  -0.396  0.69225    
+isFemale_teacher        0.13294    0.48981   0.271  0.78608    
+dummyBlack_teacher     -1.26018    0.60736  -2.075  0.03800 *  
+dummyHispanic_teacher   0.15920    0.67753   0.235  0.81423    
+dummyAsian_teacher    -14.40153  593.39397  -0.024  0.98064    
+isFemale               -0.95301    0.50778  -1.877  0.06054 .  
+dummyBlack             -0.60970    0.48556  -1.256  0.20924    
+dummyHispanic          -1.77881    1.11882  -1.590  0.11186    
+dummyAsian              0.57792    0.73378   0.788  0.43094    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 606.11  on 28736  degrees of freedom
+Residual deviance: 571.68  on 28725  degrees of freedom
+  (1560 observations deleted due to missingness)
+AIC: 595.68
+
+Number of Fisher Scoring iterations: 19
+
+###########################################
+
+> modelFour <- glm(formula = diddonate ~ condition + raceMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelFour)
+
+Call:
+glm(formula = diddonate ~ condition + raceMatch + countryMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, family = binomial(link = "logit"), data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1985  -0.0650  -0.0410  -0.0267   4.0207  
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -6.93113    0.74893  -9.255   <2e-16 ***
+condition               0.91967    0.37716   2.438   0.0148 *  
+raceMatch               0.93314    0.58939   1.583   0.1134    
+countryMatch           -0.14065    0.33066  -0.425   0.6706    
+isFemale_teacher        0.05423    0.48022   0.113   0.9101    
+dummyBlack_teacher     -1.05453    0.66214  -1.593   0.1112    
+dummyHispanic_teacher   0.70753    0.81280   0.870   0.3840    
+dummyAsian_teacher    -14.55833  555.75332  -0.026   0.9791    
+isFemale               -0.99556    0.31890  -3.122   0.0018 ** 
+dummyBlack             -0.06965    0.61725  -0.113   0.9102    
+dummyHispanic          -2.15960    1.25036  -1.727   0.0841 .  
+dummyAsian              1.33249    0.88057   1.513   0.1302    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 606.11  on 28736  degrees of freedom
+Residual deviance: 568.95  on 28725  degrees of freedom
+  (1560 observations deleted due to missingness)
+AIC: 592.95
+
+Number of Fisher Scoring iterations: 19
+
+###########################################
+
+> modelFive <- glm(formula = diddonate ~ condition + raceMatch + genderMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelFive)
+
+Call:
+glm(formula = diddonate ~ condition + raceMatch + genderMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, family = binomial(link = "logit"), data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.1950  -0.0664  -0.0427  -0.0258   4.0021  
+
+Coefficients:
+                       Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -6.97327    0.74887  -9.312   <2e-16 ***
+condition               0.88175    0.36595   2.409   0.0160 *  
+raceMatch               0.93443    0.58965   1.585   0.1130    
+genderMatch            -0.09653    0.50482  -0.191   0.8484    
+isFemale_teacher        0.06478    0.49007   0.132   0.8948    
+dummyBlack_teacher     -1.05758    0.66205  -1.597   0.1102    
+dummyHispanic_teacher   0.73719    0.81320   0.907   0.3647    
+dummyAsian_teacher    -14.57300  554.51726  -0.026   0.9790    
+isFemale               -0.92768    0.50289  -1.845   0.0651 .  
+dummyBlack             -0.07537    0.61708  -0.122   0.9028    
+dummyHispanic          -2.19534    1.25251  -1.753   0.0796 .  
+dummyAsian              1.33663    0.88011   1.519   0.1288    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 606.11  on 28736  degrees of freedom
+Residual deviance: 569.10  on 28725  degrees of freedom
+  (1560 observations deleted due to missingness)
+AIC: 593.1
+
+Number of Fisher Scoring iterations: 19
+
+###########################################
+
+> modelSix <- glm(formula = diddonate ~ condition + raceMatch + genderMatch + countryMatch + ethAndName + ethAndGen + ethAndNameAndGen + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelSix)
+
+Call:
+glm(formula = diddonate ~ condition + raceMatch + genderMatch + 
+    countryMatch + ethAndName + ethAndGen + ethAndNameAndGen + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, family = binomial(link = "logit"), data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.2412  -0.0695  -0.0456  -0.0203   4.3083  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)    
+(Intercept)            -6.296700   0.810853  -7.766 8.13e-15 ***
+condition               0.659244   0.752510   0.876   0.3810    
+raceMatch              -0.305544   0.997567  -0.306   0.7594    
+genderMatch            -2.042585   1.145739  -1.783   0.0746 .  
+countryMatch           -0.143885   0.331696  -0.434   0.6644    
+ethAndName              0.672749   1.076235   0.625   0.5319    
+ethAndGen               2.717067   1.359638   1.998   0.0457 *  
+ethAndNameAndGen       -0.490233   0.931975  -0.526   0.5989    
+isFemale_teacher        0.126384   0.492269   0.257   0.7974    
+dummyBlack_teacher     -1.081784   0.672073  -1.610   0.1075    
+dummyHispanic_teacher   0.685228   0.838039   0.818   0.4136    
+dummyAsian_teacher    -14.501229 551.312715  -0.026   0.9790    
+isFemale               -0.921772   0.507405  -1.817   0.0693 .  
+dummyBlack             -0.002141   0.619791  -0.003   0.9972    
+dummyHispanic          -2.156742   1.256941  -1.716   0.0862 .  
+dummyAsian              1.302688   0.879786   1.481   0.1387    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 606.11  on 28736  degrees of freedom
+Residual deviance: 562.33  on 28721  degrees of freedom
+  (1560 observations deleted due to missingness)
+AIC: 594.33
+
+Number of Fisher Scoring iterations: 19

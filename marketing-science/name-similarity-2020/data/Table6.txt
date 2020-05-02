@@ -1,0 +1,225 @@
+> modelOne <- lm(formula = ln_paymentplusone ~ condition + raceMatch + genderMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian,data = Name_Similarity_Data)
+> summary(modelOne)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + raceMatch + genderMatch + 
+    countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0224 -0.0091 -0.0056 -0.0014  6.5814 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)   
+(Intercept)            1.079e-02  3.687e-03   2.925  0.00345 **
+condition              4.566e-03  1.961e-03   2.328  0.01991 * 
+raceMatch              2.636e-03  2.111e-03   1.249  0.21174   
+genderMatch           -7.072e-05  3.314e-03  -0.021  0.98297   
+countryMatch          -1.664e-03  1.925e-03  -0.864  0.38739   
+isFemale_teacher      -4.533e-05  3.242e-03  -0.014  0.98885   
+dummyBlack_teacher    -4.511e-03  2.319e-03  -1.945  0.05182 . 
+dummyHispanic_teacher -1.503e-03  3.432e-03  -0.438  0.66144   
+dummyAsian_teacher    -7.641e-03  5.681e-03  -1.345  0.17867   
+isFemale              -7.724e-03  3.274e-03  -2.359  0.01832 * 
+dummyBlack            -2.332e-03  2.318e-03  -1.006  0.31444   
+dummyHispanic         -4.933e-03  3.419e-03  -1.443  0.14900   
+dummyAsian             7.045e-03  5.764e-03   1.222  0.22161   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1533 on 28724 degrees of freedom
+  (1560 observations deleted due to missingness)
+Multiple R-squared:  0.001291,	Adjusted R-squared:  0.0008738 
+F-statistic: 3.094 on 12 and 28724 DF,  p-value: 0.0002141
+
+##############################################
+
+> modelTwo <- lm(formula = ln_paymentplusone ~  raceMatch + genderMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian,data = Name_Similarity_Data)
+> summary(modelTwo)
+
+Call:
+lm(formula = ln_paymentplusone ~ raceMatch + genderMatch + countryMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0195 -0.0075 -0.0071 -0.0013  6.5839 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)   
+(Intercept)            1.177e-02  3.664e-03   3.212  0.00132 **
+raceMatch              3.801e-03  2.051e-03   1.853  0.06384 . 
+genderMatch           -4.883e-05  3.314e-03  -0.015  0.98824   
+countryMatch          -3.834e-04  1.845e-03  -0.208  0.83538   
+isFemale_teacher      -1.761e-04  3.242e-03  -0.054  0.95668   
+dummyBlack_teacher    -4.219e-03  2.316e-03  -1.822  0.06851 . 
+dummyHispanic_teacher -1.233e-03  3.431e-03  -0.359  0.71926   
+dummyAsian_teacher    -7.307e-03  5.680e-03  -1.286  0.19832   
+isFemale              -7.853e-03  3.274e-03  -2.399  0.01645 * 
+dummyBlack            -2.047e-03  2.315e-03  -0.884  0.37672   
+dummyHispanic         -4.654e-03  3.417e-03  -1.362  0.17320   
+dummyAsian             7.751e-03  5.756e-03   1.347  0.17814   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1533 on 28725 degrees of freedom
+  (1560 observations deleted due to missingness)
+Multiple R-squared:  0.001103,	Adjusted R-squared:  0.00072 
+F-statistic: 2.882 on 11 and 28725 DF,  p-value: 0.000854
+
+##############################################
+
+> modelThree <- lm(formula = ln_paymentplusone ~ condition + genderMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian,data = Name_Similarity_Data)
+> summary(modelThree)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + genderMatch + countryMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0235 -0.0088 -0.0046 -0.0015  6.5818 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            1.233e-02  3.474e-03   3.550 0.000386 ***
+condition              5.147e-03  1.905e-03   2.701 0.006915 ** 
+genderMatch            4.675e-05  3.312e-03   0.014 0.988740    
+countryMatch          -1.483e-03  1.920e-03  -0.773 0.439799    
+isFemale_teacher       8.242e-05  3.241e-03   0.025 0.979710    
+dummyBlack_teacher    -5.308e-03  2.230e-03  -2.381 0.017284 *  
+dummyHispanic_teacher -1.923e-03  3.416e-03  -0.563 0.573530    
+dummyAsian_teacher    -8.664e-03  5.622e-03  -1.541 0.123303    
+isFemale              -7.824e-03  3.273e-03  -2.391 0.016820 *  
+dummyBlack            -3.163e-03  2.221e-03  -1.424 0.154407    
+dummyHispanic         -5.370e-03  3.401e-03  -1.579 0.114316    
+dummyAsian             5.945e-03  5.696e-03   1.044 0.296649    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1533 on 28725 degrees of freedom
+  (1560 observations deleted due to missingness)
+Multiple R-squared:  0.001237,	Adjusted R-squared:  0.0008543 
+F-statistic: 3.234 on 11 and 28725 DF,  p-value: 0.0002007
+
+##############################################
+
+> modelFour <- lm(formula = ln_paymentplusone ~ condition + raceMatch + countryMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian,data = Name_Similarity_Data)
+> summary(modelFour)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + raceMatch + countryMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0224 -0.0091 -0.0056 -0.0014  6.5814 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            1.081e-02  3.439e-03   3.145  0.00166 ** 
+condition              4.566e-03  1.961e-03   2.328  0.01991 *  
+raceMatch              2.635e-03  2.110e-03   1.249  0.21177    
+countryMatch          -1.665e-03  1.925e-03  -0.865  0.38713    
+isFemale_teacher      -8.649e-05  2.606e-03  -0.033  0.97353    
+dummyBlack_teacher    -4.511e-03  2.319e-03  -1.945  0.05179 .  
+dummyHispanic_teacher -1.505e-03  3.432e-03  -0.438  0.66104    
+dummyAsian_teacher    -7.640e-03  5.681e-03  -1.345  0.17871    
+isFemale              -7.776e-03  2.166e-03  -3.591  0.00033 ***
+dummyBlack            -2.333e-03  2.318e-03  -1.006  0.31433    
+dummyHispanic         -4.934e-03  3.419e-03  -1.443  0.14897    
+dummyAsian             7.045e-03  5.763e-03   1.222  0.22156    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1533 on 28725 degrees of freedom
+  (1560 observations deleted due to missingness)
+Multiple R-squared:  0.001291,	Adjusted R-squared:  0.0009086 
+F-statistic: 3.376 on 11 and 28725 DF,  p-value: 0.0001103
+
+##############################################
+
+> modelFive <- lm(formula = ln_paymentplusone ~ condition + raceMatch + genderMatch + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian,data = Name_Similarity_Data)
+> summary(modelFive)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + raceMatch + genderMatch + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0216 -0.0091 -0.0050 -0.0019  6.5824 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)   
+(Intercept)            1.042e-02  3.664e-03   2.845  0.00444 **
+condition              4.082e-03  1.879e-03   2.172  0.02989 * 
+raceMatch              2.499e-03  2.105e-03   1.187  0.23519   
+genderMatch           -1.171e-04  3.313e-03  -0.035  0.97182   
+isFemale_teacher      -7.391e-05  3.242e-03  -0.023  0.98181   
+dummyBlack_teacher    -4.620e-03  2.316e-03  -1.995  0.04604 * 
+dummyHispanic_teacher -1.404e-03  3.430e-03  -0.409  0.68236   
+dummyAsian_teacher    -7.570e-03  5.681e-03  -1.333  0.18269   
+isFemale              -7.758e-03  3.273e-03  -2.370  0.01780 * 
+dummyBlack            -2.472e-03  2.313e-03  -1.069  0.28506   
+dummyHispanic         -4.854e-03  3.417e-03  -1.420  0.15553   
+dummyAsian             7.085e-03  5.763e-03   1.229  0.21895   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1533 on 28725 degrees of freedom
+  (1560 observations deleted due to missingness)
+Multiple R-squared:  0.001265,	Adjusted R-squared:  0.0008826 
+F-statistic: 3.308 on 11 and 28725 DF,  p-value: 0.000147
+
+##############################################
+
+> modelSix <- lm(formula = ln_paymentplusone ~ condition + raceMatch + genderMatch + countryMatch + ethAndName + ethAndGen + ethAndNameAndGen + isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + dummyAsian, data = Name_Similarity_Data)
+> summary(modelSix)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + raceMatch + genderMatch + 
+    countryMatch + ethAndName + ethAndGen + ethAndNameAndGen + 
+    isFemale_teacher + dummyBlack_teacher + dummyHispanic_teacher + 
+    dummyAsian_teacher + isFemale + dummyBlack + dummyHispanic + 
+    dummyAsian, data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0213 -0.0095 -0.0053 -0.0009  6.5800 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)   
+(Intercept)            1.327e-02  4.042e-03   3.282  0.00103 **
+condition              1.013e-03  3.009e-03   0.337  0.73631   
+raceMatch             -4.208e-03  4.551e-03  -0.925  0.35517   
+genderMatch           -1.733e-03  4.006e-03  -0.433  0.66525   
+countryMatch          -1.573e-03  1.926e-03  -0.817  0.41416   
+ethAndName             9.230e-03  5.435e-03   1.698  0.08949 . 
+ethAndGen              5.652e-03  5.138e-03   1.100  0.27132   
+ethAndNameAndGen      -4.494e-03  5.363e-03  -0.838  0.40208   
+isFemale_teacher       8.635e-05  3.249e-03   0.027  0.97880   
+dummyBlack_teacher    -4.605e-03  2.320e-03  -1.984  0.04722 * 
+dummyHispanic_teacher -2.129e-03  3.460e-03  -0.615  0.53830   
+dummyAsian_teacher    -8.110e-03  5.687e-03  -1.426  0.15388   
+isFemale              -7.750e-03  3.275e-03  -2.367  0.01796 * 
+dummyBlack            -2.371e-03  2.321e-03  -1.021  0.30703   
+dummyHispanic         -5.560e-03  3.444e-03  -1.614  0.10648   
+dummyAsian             6.972e-03  5.764e-03   1.210  0.22647   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1533 on 28721 degrees of freedom
+  (1560 observations deleted due to missingness)
+Multiple R-squared:  0.001418,	Adjusted R-squared:  0.0008964 
+F-statistic: 2.719 on 15 and 28721 DF,  p-value: 0.0003477

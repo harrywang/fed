@@ -1,0 +1,246 @@
+> modelOne <- glm(formula = openedcount ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelOne)
+
+Call:
+glm(formula = openedcount ~ condition + census_raceMatch + census_black_teacher + 
+    census_hispanic_teacher + census_asian_teacher + census_black_donor + 
+    census_hispanic_donor + census_asian_donor, family = binomial(link = "logit"), 
+    data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.9737  -0.9307  -0.8066   1.4461   1.6574  
+
+Coefficients:
+                          Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             -0.9832328  0.0462632 -21.253   <2e-16 ***
+condition                0.3433709  0.0271994  12.624   <2e-16 ***
+census_raceMatch         0.0273770  0.0502778   0.545   0.5861    
+census_black_teacher    -0.0608818  0.1233030  -0.494   0.6215    
+census_hispanic_teacher -0.0445028  0.0528564  -0.842   0.3998    
+census_asian_teacher    -0.0973576  0.1274592  -0.764   0.4450    
+census_black_donor       0.0024062  0.1228467   0.020   0.9844    
+census_hispanic_donor   -0.0008227  0.0528066  -0.016   0.9876    
+census_asian_donor       0.2098694  0.1245356   1.685   0.0919 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 37672  on 30296  degrees of freedom
+Residual deviance: 37470  on 30288  degrees of freedom
+AIC: 37488
+
+Number of Fisher Scoring iterations: 4
+
+###########################################
+
+> modelTwo <- glm(formula = clickedcount ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelTwo)
+
+Call:
+glm(formula = clickedcount ~ condition + census_raceMatch + census_black_teacher + 
+    census_hispanic_teacher + census_asian_teacher + census_black_donor + 
+    census_hispanic_donor + census_asian_donor, family = binomial(link = "logit"), 
+    data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.4475  -0.3755  -0.3158  -0.3158   2.5784  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             -3.27648    0.10155 -32.264  < 2e-16 ***
+condition                0.35687    0.05452   6.546 5.92e-11 ***
+census_raceMatch         0.30288    0.10958   2.764  0.00571 ** 
+census_black_teacher     0.03691    0.27362   0.135  0.89271    
+census_hispanic_teacher  0.03383    0.11784   0.287  0.77406    
+census_asian_teacher     0.17842    0.26551   0.672  0.50159    
+census_black_donor       0.04080    0.27359   0.149  0.88146    
+census_hispanic_donor   -0.01097    0.11801  -0.093  0.92591    
+census_asian_donor       0.18745    0.26560   0.706  0.48035    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 13321  on 30296  degrees of freedom
+Residual deviance: 13240  on 30288  degrees of freedom
+AIC: 13258
+
+Number of Fisher Scoring iterations: 5
+
+###########################################
+
+> modelThree <- glm(formula = clickedcount ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor, family=binomial(link='logit'),data = newdata)
+> summary(modelThree)
+
+Call:
+glm(formula = clickedcount ~ condition + census_raceMatch + census_black_teacher + 
+    census_hispanic_teacher + census_asian_teacher + census_black_donor + 
+    census_hispanic_donor + census_asian_donor, family = binomial(link = "logit"), 
+    data = newdata)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.7561  -0.6561  -0.6206  -0.5547   2.0117  
+
+Coefficients:
+                        Estimate Std. Error z value Pr(>|z|)    
+(Intercept)             -1.86895    0.10810 -17.289  < 2e-16 ***
+condition                0.12309    0.05862   2.100  0.03576 *  
+census_raceMatch         0.31942    0.11685   2.734  0.00627 ** 
+census_black_teacher     0.10509    0.28275   0.372  0.71015    
+census_hispanic_teacher  0.07511    0.12532   0.599  0.54893    
+census_asian_teacher     0.28895    0.29135   0.992  0.32131    
+census_black_donor       0.05130    0.28233   0.182  0.85580    
+census_hispanic_donor   -0.01277    0.12548  -0.102  0.91893    
+census_asian_donor       0.03147    0.29000   0.109  0.91359    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 9043.6  on 9491  degrees of freedom
+Residual deviance: 9022.0  on 9483  degrees of freedom
+AIC: 9040
+
+Number of Fisher Scoring iterations: 4
+
+###########################################
+
+> modelFour <- glm(formula = diddonate ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor, family=binomial(link='logit'),data = Name_Similarity_Data)
+> summary(modelFour)
+
+Call:
+glm(formula = diddonate ~ condition + census_raceMatch + census_black_teacher + 
+    census_hispanic_teacher + census_asian_teacher + census_black_donor + 
+    census_hispanic_donor + census_asian_donor, family = binomial(link = "logit"), 
+    data = Name_Similarity_Data)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.0978  -0.0661  -0.0413  -0.0413   3.8103  
+
+Coefficients:
+                          Estimate Std. Error z value Pr(>|z|)  
+(Intercept)               -31.6384  1363.9964  -0.023   0.9815  
+condition                   0.9389     0.3665   2.562   0.0104 *
+census_raceMatch           24.5734  1363.9965   0.018   0.9856  
+census_black_teacher       -0.8754 11160.6705   0.000   0.9999  
+census_hispanic_teacher    25.2119  1363.9970   0.018   0.9853  
+census_asian_teacher       11.6142   904.9298   0.013   0.9898  
+census_black_donor        -15.7482 10591.3864  -0.001   0.9988  
+census_hispanic_donor     -26.3442  1363.9973  -0.019   0.9846  
+census_asian_donor        -10.8283   904.9292  -0.012   0.9905  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 649.89  on 30296  degrees of freedom
+Residual deviance: 633.60  on 30288  degrees of freedom
+AIC: 651.6
+
+Number of Fisher Scoring iterations: 22
+
+###########################################
+
+> modelFive <- glm(formula = diddonate ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor, family=binomial(link='logit'),data = newdata2) 
+> summary(modelFive)
+
+Call:
+glm(formula = diddonate ~ condition + census_raceMatch + census_black_teacher + 
+    census_hispanic_teacher + census_asian_teacher + census_black_donor + 
+    census_hispanic_donor + census_asian_donor, family = binomial(link = "logit"), 
+    data = newdata2)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3203  -0.2549  -0.2549  -0.1886   3.0264  
+
+Coefficients:
+                          Estimate Std. Error z value Pr(>|z|)  
+(Intercept)               -17.6513   808.8523  -0.022   0.9826  
+condition                   0.6097     0.3700   1.648   0.0994 .
+census_raceMatch           13.6310   808.8524   0.017   0.9866  
+census_black_teacher       -7.8416 40568.7019   0.000   0.9998  
+census_hispanic_teacher    14.5378   808.8527   0.018   0.9857  
+census_asian_teacher        0.3175   896.5678   0.000   0.9997  
+census_black_donor         -7.8416 40568.7019   0.000   0.9998  
+census_hispanic_donor     -15.6963   808.8533  -0.019   0.9845  
+census_asian_donor          0.1486   896.5678   0.000   0.9999  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 403.17  on 1739  degrees of freedom
+Residual deviance: 392.98  on 1731  degrees of freedom
+AIC: 410.98
+
+Number of Fisher Scoring iterations: 18
+
+###########################################
+
+> modelSix <- lm(formula = ln_paymentplusone ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor,data = Name_Similarity_Data)
+> summary(modelSix)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + census_raceMatch + 
+    census_black_teacher + census_hispanic_teacher + census_asian_teacher + 
+    census_black_donor + census_hispanic_donor + census_asian_donor, 
+    data = Name_Similarity_Data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.0165 -0.0085 -0.0040 -0.0034  6.5908 
+
+Coefficients:
+                          Estimate Std. Error t value Pr(>|t|)   
+(Intercept)              0.0039637  0.0032237   1.230  0.21888   
+condition                0.0051299  0.0019284   2.660  0.00781 **
+census_raceMatch        -0.0005559  0.0034960  -0.159  0.87367   
+census_black_teacher    -0.0039154  0.0084698  -0.462  0.64389   
+census_hispanic_teacher  0.0004181  0.0036644   0.114  0.90917   
+census_asian_teacher     0.0043451  0.0088220   0.493  0.62235   
+census_black_donor      -0.0043355  0.0084842  -0.511  0.60935   
+census_hispanic_donor   -0.0052982  0.0036622  -1.447  0.14798   
+census_asian_donor       0.0036300  0.0088485   0.410  0.68164   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1539 on 30288 degrees of freedom
+Multiple R-squared:  0.0004074,	Adjusted R-squared:  0.0001434 
+F-statistic: 1.543 on 8 and 30288 DF,  p-value: 0.1365
+
+###########################################
+
+> modelSeven <- lm(formula = ln_paymentplusone ~ condition + census_raceMatch + census_black_teacher + census_hispanic_teacher + census_asian_teacher + census_black_donor + census_hispanic_donor + census_asian_donor,data = newdata2)
+> summary(modelSeven)
+
+Call:
+lm(formula = ln_paymentplusone ~ condition + census_raceMatch + 
+    census_black_teacher + census_hispanic_teacher + census_asian_teacher + 
+    census_black_donor + census_hispanic_donor + census_asian_donor, 
+    data = newdata2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.2012 -0.1250 -0.1250 -0.0705  6.4743 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)
+(Intercept)              0.08368    0.06277   1.333    0.183
+condition                0.05450    0.03352   1.626    0.104
+census_raceMatch        -0.01315    0.06754  -0.195    0.846
+census_black_teacher    -0.06655    0.17407  -0.382    0.702
+census_hispanic_teacher  0.04045    0.07367   0.549    0.583
+census_asian_teacher     0.04784    0.16392   0.292    0.770
+census_black_donor      -0.06655    0.17407  -0.382    0.702
+census_hispanic_donor   -0.11522    0.07375  -1.562    0.118
+census_asian_donor       0.02830    0.16391   0.173    0.863
+
+Residual standard error: 0.6356 on 1731 degrees of freedom
+Multiple R-squared:  0.003842,	Adjusted R-squared:  -0.0007622 
+F-statistic: 0.8344 on 8 and 1731 DF,  p-value: 0.5722
