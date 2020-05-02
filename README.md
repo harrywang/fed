@@ -1,6 +1,6 @@
 # About FED
 
-FED: Field Experiment Demystified via examples with code
+Field Experiment Demystified (FED) via examples with code
 
 ## Setup
 
@@ -28,6 +28,6 @@ Run `$ jupyter notebook` to go over the notebooks.
 
 ## Disclaimer
 
-The copyright (if any) of the data belongs to the original sources. This is only for learning and research only.
+The copyright (if any) of the data belongs to the original sources. This repo is only for learning and research.
 
-For data from Marketing Science, we follow the Marketing Science replication policy and only use the downloaded file(s) for verifying replicability of the relevant paper's main results using the same data and model(s). 
+For data from Marketing Science, we follow the Marketing Science replication policy and only use the downloaded file(s) for verifying replicability of the relevant paper's main results using the same data and model(s).
